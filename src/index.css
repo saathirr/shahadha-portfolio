@@ -1,0 +1,95 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Base typography & global styles */
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-slate-50 font-body text-slate-700 antialiased;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    @apply font-heading text-navy;
+  }
+
+  ::selection {
+    @apply bg-brand-600 text-white;
+  }
+
+  /* Custom scrollbar for a subtle branded touch */
+  ::-webkit-scrollbar {
+    width: 10px;
+  }
+  ::-webkit-scrollbar-track {
+    background: #e2e8f0;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: #2563eb;
+    border-radius: 9999px;
+  }
+}
+
+/* Reusable component classes */
+@layer components {
+  .container-page {
+    @apply mx-auto w-full max-w-6xl px-5 sm:px-8;
+  }
+
+  .section-pad {
+    @apply py-20 sm:py-28;
+  }
+
+  .btn {
+    @apply inline-flex items-center justify-center gap-2 rounded-full px-6 py-3 text-sm font-semibold transition-all duration-300 focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-600 focus-visible:ring-offset-2;
+  }
+
+  .btn-primary {
+    @apply btn bg-brand-600 text-white shadow-card hover:-translate-y-0.5 hover:bg-brand-700 hover:shadow-lift;
+  }
+
+  .btn-outline {
+    @apply btn border-2 border-navy text-navy hover:-translate-y-0.5 hover:bg-navy hover:text-white;
+  }
+
+  .btn-accent {
+    @apply btn bg-accent text-white shadow-card hover:-translate-y-0.5 hover:bg-accent-dark hover:shadow-lift;
+  }
+
+  .eyebrow {
+    @apply inline-flex items-center gap-2 rounded-full bg-brand-50 px-4 py-1.5 text-xs font-bold uppercase tracking-widest text-brand-700 ring-1 ring-brand-200;
+  }
+
+  /* Animated gradient headline text with soft glow */
+  .gradient-text {
+    @apply bg-gradient-to-r from-brand-300 via-brand-500 to-accent bg-[length:200%_auto] bg-clip-text text-transparent;
+    animation: gradient-x 6s ease infinite;
+  }
+
+  /* Subtle glow behind large hero text */
+  .text-glow {
+    filter: drop-shadow(0 2px 18px rgba(59, 130, 246, 0.45));
+  }
+
+  /* Decorative gradient underline used under section titles */
+  .heading-underline {
+    @apply mx-auto mt-5 h-1.5 w-24 rounded-full bg-gradient-to-r from-brand-600 via-brand-400 to-accent;
+  }
+
+  /* Card with soft gradient border that brightens on hover */
+  .card-hover {
+    @apply rounded-2xl border border-slate-200 bg-white shadow-card transition-all duration-300 hover:-translate-y-1.5 hover:border-brand-300 hover:shadow-lift;
+  }
+}
+
+/* Full-bleed blueprint texture helper */
+.bg-blueprint-fade {
+  background-image: radial-gradient(circle at 1px 1px, rgba(59, 130, 246, 0.12) 1px, transparent 0);
+  background-size: 28px 28px;
+}
