@@ -1,9 +1,11 @@
 import { motion } from 'framer-motion'
 import { fadeUp, staggerContainer, viewportOnce } from './motion'
+import MeasureLine from './MeasureLine'
 
 /**
  * Reusable section heading — eyebrow label + title + optional description.
- * Animates as a staggered block when scrolled into view.
+ * Animates as a staggered block when scrolled into view, with a
+ * self-drawing QS measurement line beneath the title.
  */
 export default function SectionHeading({ eyebrow, title, description, center = true }) {
   return (
@@ -35,9 +37,9 @@ export default function SectionHeading({ eyebrow, title, description, center = t
           {description}
         </motion.p>
       )}
-      <motion.span variants={fadeUp} className={center ? 'block' : 'inline-block'}>
-        <span className={`heading-underline ${center ? 'block' : ''}`} />
-      </motion.span>
+      <motion.div variants={fadeUp} className={`${center ? 'mx-auto' : ''} mt-6`}>
+        <MeasureLine className="w-full max-w-[320px]" />
+      </motion.div>
     </motion.div>
   )
 }

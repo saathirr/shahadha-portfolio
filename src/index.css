@@ -77,11 +77,6 @@
     filter: drop-shadow(0 2px 18px rgba(59, 130, 246, 0.45));
   }
 
-  /* Decorative gradient underline used under section titles */
-  .heading-underline {
-    @apply mx-auto mt-5 h-1.5 w-24 rounded-full bg-gradient-to-r from-brand-600 via-brand-400 to-accent;
-  }
-
   /* Card with soft gradient border that brightens on hover */
   .card-hover {
     @apply rounded-2xl border border-slate-200 bg-white shadow-card transition-all duration-300 hover:-translate-y-1.5 hover:border-brand-300 hover:shadow-lift;

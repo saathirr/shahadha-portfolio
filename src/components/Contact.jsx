@@ -2,6 +2,7 @@ import { motion } from 'framer-motion'
 import { FiMail, FiPhone, FiSend, FiUser } from 'react-icons/fi'
 import { FaLinkedinIn } from 'react-icons/fa'
 import BlueprintBackground from './BlueprintBackground'
+import MeasureLine from './MeasureLine'
 import { contact } from '../data'
 import { fadeUp, scalePop, staggerContainer, viewportOnce } from './motion'
 
@@ -39,9 +40,9 @@ export default function Contact() {
           <motion.h2 variants={fadeUp} className="mt-4 text-3xl font-bold tracking-tight sm:text-4xl">
             {contact.heading}
           </motion.h2>
-          <motion.span variants={fadeUp} className="block">
-            <span className="mx-auto mt-5 h-1.5 w-24 rounded-full bg-gradient-to-r from-brand-500 via-brand-300 to-accent" />
-          </motion.span>
+          <motion.div variants={fadeUp} className="mx-auto mt-6">
+            <MeasureLine tone="dark" className="w-full max-w-[320px]" />
+          </motion.div>
           <motion.p variants={fadeUp} className="mx-auto mt-4 max-w-2xl text-base leading-relaxed text-slate-300 sm:text-lg">
             {contact.tagline}
           </motion.p>
