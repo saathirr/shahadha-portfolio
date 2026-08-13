@@ -11,8 +11,6 @@ export const personalInfo = {
   email: 'thowfeekshahadha@gmail.com',
   phone: '+94 71 480 6643',
   phoneHref: '+94714806643',
-  behance: 'https://www.behance.net/mohammedsaathir',
-  behanceLabel: 'behance.net/mohammedsaathir',
   linkedin: 'https://www.linkedin.com/in/mohammed-saathir-linkedin',
   linkedinLabel: 'mohammed-saathir-linkedin',
   profilePhoto: '/Profile.jpg',
@@ -22,11 +20,7 @@ export const hero = {
   tagline:
     'Building precise cost solutions for tomorrow\u2019s construction — detail-driven, eager to learn, and ready to contribute.',
   primaryCta: {
-    label: 'View Portfolio',
-    href: 'https://www.behance.net/mohammedsaathir',
-  },
-  secondaryCta: {
-    label: 'Contact Me',
+    label: 'Get In Touch',
     href: '#contact',
   },
 }
@@ -117,33 +111,6 @@ export const languages = [
   { name: 'Sinhala', level: 'Intermediate', percent: 65 },
 ]
 
-export const portfolio = {
-  heading: 'Portfolio',
-  tagline:
-    'Selected works from my journey so far — see real projects on my Behance profile.',
-  behanceUrl: 'https://www.behance.net/mohammedsaathir',
-  cards: [
-    {
-      id: 1,
-      title: 'Quantity Take-Off Case Study',
-      subtitle: 'Measurement & Estimating',
-      status: 'Coming soon',
-    },
-    {
-      id: 2,
-      title: 'BOQ Preparation Sample',
-      subtitle: 'Bills of Quantities',
-      status: 'Coming soon',
-    },
-    {
-      id: 3,
-      title: 'Construction Cost Estimation',
-      subtitle: 'Cost Planning',
-      status: 'Coming soon',
-    },
-  ],
-}
-
 export const contact = {
   heading: 'Get In Touch',
   tagline:
@@ -167,12 +134,6 @@ export const contact = {
       value: 'mohammed-saathir-linkedin',
       href: 'https://www.linkedin.com/in/mohammed-saathir-linkedin',
     },
-    {
-      icon: 'behance',
-      label: 'Behance',
-      value: 'behance.net/mohammedsaathir',
-      href: 'https://www.behance.net/mohammedsaathir',
-    },
   ],
 }
 
@@ -183,6 +144,5 @@ export const navLinks = [
   { id: 'skills', label: 'Skills' },
   { id: 'knowledge', label: 'Knowledge' },
   { id: 'strengths', label: 'Strengths' },
-  { id: 'portfolio', label: 'Portfolio' },
   { id: 'contact', label: 'Contact' },
 ]

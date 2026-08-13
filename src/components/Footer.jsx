@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion'
-import { FaLinkedinIn, FaBehance } from 'react-icons/fa'
+import { FaLinkedinIn } from 'react-icons/fa'
 import { FiMail, FiPhone } from 'react-icons/fi'
 import { personalInfo } from '../data'
 import { fadeUp, staggerContainer, viewportOnce } from './motion'
@@ -15,7 +15,6 @@ export default function Footer() {
     { label: 'Email', href: `mailto:${personalInfo.email}`, Icon: FiMail },
     { label: 'Phone', href: `tel:${personalInfo.phoneHref}`, Icon: FiPhone },
     { label: 'LinkedIn', href: personalInfo.linkedin, Icon: FaLinkedinIn },
-    { label: 'Behance', href: personalInfo.behance, Icon: FaBehance },
   ]
 
   return (

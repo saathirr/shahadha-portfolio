@@ -1,10 +1,12 @@
 import { motion } from 'framer-motion'
-import { FiArrowRight, FiMail, FiMapPin } from 'react-icons/fi'
+import { FiArrowRight, FiMapPin } from 'react-icons/fi'
 import { BsRulers } from 'react-icons/bs'
 import { MdOutlineArchitecture, MdOutlineLightbulb } from 'react-icons/md'
 import BlueprintBackground from './BlueprintBackground'
 import RotatingBadge from './RotatingBadge'
 import TypeWriter from './TypeWriter'
+import { flipIn } from './motion'
+import WordReveal from './WordReveal'
 import { hero, personalInfo, skills } from '../data'
 
 /**
@@ -81,7 +83,7 @@ export default function Hero() {
             className="mx-auto max-w-2xl text-center lg:mx-0 lg:max-w-none lg:text-left"
           >
             {/* Profile photo — centered on mobile/tablet, hidden on desktop */}
-            <motion.div variants={fadeUp} className="relative mx-auto mb-8 h-36 w-36 sm:h-40 sm:w-40 lg:hidden">
+            <motion.div variants={flipIn} className="relative mx-auto mb-8 h-36 w-36 sm:h-40 sm:w-40 lg:hidden">
               <span className="absolute inset-0 rounded-full bg-brand-500/40 animate-pulse-ring" />
               <span
                 className="absolute inset-0 rounded-full bg-accent/40 animate-pulse-ring"
@@ -141,12 +143,9 @@ export default function Hero() {
               <TypeWriter words={roleWords} className="text-brand-300" />
             </motion.p>
 
-            <motion.p
-              variants={fadeUp}
-              className="mx-auto mt-4 max-w-xl text-base leading-relaxed text-slate-300 lg:mx-0"
-            >
-              {hero.tagline}
-            </motion.p>
+            <p className="mx-auto mt-4 max-w-xl text-base leading-relaxed text-slate-300 lg:mx-0">
+              <WordReveal text={hero.tagline} />
+            </p>
 
             {/* CTA buttons */}
             <motion.div
@@ -155,19 +154,10 @@ export default function Hero() {
             >
               <a
                 href={hero.primaryCta.href}
-                target="_blank"
-                rel="noopener noreferrer"
                 className="btn-accent"
               >
                 {hero.primaryCta.label}
                 <FiArrowRight />
-              </a>
-              <a
-                href={hero.secondaryCta.href}
-                className="btn-outline !border-white !text-white hover:!bg-white hover:!text-navy"
-              >
-                <FiMail />
-                {hero.secondaryCta.label}
               </a>
             </motion.div>
 
@@ -193,8 +183,9 @@ export default function Hero() {
 
           {/* Profile photo — right column on desktop with rotating badge */}
           <motion.div
-            initial={{ opacity: 0, scale: 0.7 }}
-            animate={{ opacity: 1, scale: 1 }}
+            variants={flipIn}
+            initial="hidden"
+            animate="visible"
             transition={{ duration: 0.6, delay: 0.7, ease: 'easeOut' }}
             className="relative hidden justify-center lg:flex"
           >

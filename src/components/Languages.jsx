@@ -1,7 +1,7 @@
 import { motion } from 'framer-motion'
 import SectionHeading from './SectionHeading'
 import { languages } from '../data'
-import { fadeUp, staggerContainer, viewportOnce } from './motion'
+import { fadeUp, scalePop, staggerContainer, viewportOnce } from './motion'
 
 /**
  * Languages — animated proficiency bars that fill from 0 to the
@@ -28,9 +28,12 @@ export default function Languages() {
             <motion.div key={lang.name} variants={fadeUp}>
               <div className="mb-2 flex items-baseline justify-between">
                 <h3 className="font-semibold text-navy">{lang.name}</h3>
-                <span className="rounded-full bg-brand-50 px-3 py-0.5 text-sm font-bold text-brand-700 ring-1 ring-brand-200">
+                <motion.span
+                  variants={scalePop}
+                  className="rounded-full bg-brand-50 px-3 py-0.5 text-sm font-bold text-brand-700 ring-1 ring-brand-200"
+                >
                   {lang.level}
-                </span>
+                </motion.span>
               </div>
               <div
                 className="h-3 w-full overflow-hidden rounded-full bg-slate-200 shadow-inner"

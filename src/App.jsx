@@ -8,7 +8,6 @@ import Skills from './components/Skills'
 import AcademicKnowledge from './components/AcademicKnowledge'
 import Strengths from './components/Strengths'
 import Languages from './components/Languages'
-import Portfolio from './components/Portfolio'
 import Contact from './components/Contact'
 import Footer from './components/Footer'
 
@@ -29,7 +28,6 @@ export default function App() {
         <AcademicKnowledge />
         <Strengths />
         <Languages />
-        <Portfolio />
         <Contact />
       </main>
       <Footer />

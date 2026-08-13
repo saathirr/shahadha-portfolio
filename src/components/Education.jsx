@@ -2,7 +2,7 @@ import { motion } from 'framer-motion'
 import { FaGraduationCap } from 'react-icons/fa'
 import SectionHeading from './SectionHeading'
 import { education } from '../data'
-import { fadeUp, scaleIn, staggerContainer, viewportOnce } from './motion'
+import { fadeUp, scalePop, slideLeft, slideRight, staggerContainer, viewportOnce } from './motion'
 
 /**
  * Education — vertical animated timeline. Each entry has a dot that
@@ -45,7 +45,7 @@ export default function Education() {
                 >
                   {/* Pop-in timeline dot */}
                   <motion.span
-                    variants={scaleIn}
+                    variants={scalePop}
                     className={`absolute top-1 left-5 z-10 flex h-4 w-4 -translate-x-1/2 items-center justify-center sm:left-1/2 ${
                       item.current
                         ? 'bg-accent ring-4 ring-accent/20'
@@ -64,6 +64,7 @@ export default function Education() {
                     }`}
                   >
                     <motion.article
+                      variants={leftSide ? slideLeft : slideRight}
                       whileHover={{ y: -5 }}
                       transition={{ type: 'spring', stiffness: 300, damping: 22 }}
                       className="relative overflow-hidden rounded-2xl border border-slate-200 bg-white p-6 shadow-card hover:border-brand-300 hover:shadow-lift"

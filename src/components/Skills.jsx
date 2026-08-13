@@ -2,7 +2,7 @@ import { motion } from 'framer-motion'
 import { FiCheckCircle } from 'react-icons/fi'
 import SectionHeading from './SectionHeading'
 import { skills } from '../data'
-import { fadeUp, staggerContainer, viewportOnce } from './motion'
+import { fadeUp, scalePop, staggerContainer, viewportOnce } from './motion'
 
 /**
  * Technical Skills — responsive card grid where each skill
@@ -33,9 +33,12 @@ export default function Skills() {
                 transition={{ type: 'spring', stiffness: 320, damping: 18 }}
                 className="group flex h-full items-center gap-4 rounded-2xl border border-slate-200 bg-white p-5 shadow-card hover:border-brand-300 hover:shadow-lift"
               >
-                <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-gradient-to-br from-brand-600 to-brand-400 text-white shadow-glow transition-transform duration-300 group-hover:scale-110 group-hover:-rotate-6">
+                <motion.span
+                  variants={scalePop}
+                  className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-gradient-to-br from-brand-600 to-brand-400 text-white shadow-glow transition-transform duration-300 group-hover:scale-110 group-hover:-rotate-6"
+                >
                   <FiCheckCircle size={20} aria-hidden="true" />
-                </span>
+                </motion.span>
                 <span className="font-medium text-navy transition-colors group-hover:text-brand-700">
                   {skill}
                 </span>

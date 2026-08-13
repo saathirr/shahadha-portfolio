@@ -13,7 +13,7 @@ import {
 } from 'react-icons/fa'
 import SectionHeading from './SectionHeading'
 import { academicKnowledge } from '../data'
-import { fadeUp, staggerContainer, viewportOnce } from './motion'
+import { fadeUp, scalePop, staggerContainer, viewportOnce } from './motion'
 
 /** Icons cycled across the academic knowledge items. */
 const icons = [
@@ -59,9 +59,12 @@ export default function AcademicKnowledge() {
                   transition={{ type: 'spring', stiffness: 350, damping: 20 }}
                   className="group flex items-center gap-4 rounded-2xl border border-slate-200 bg-slate-50 p-4 transition-colors duration-300 hover:border-brand-300 hover:bg-white hover:shadow-card"
                 >
-                  <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-gradient-to-br from-brand-600 to-brand-400 text-white shadow-glow transition-transform duration-300 group-hover:scale-110 group-hover:-rotate-6">
-                    <Icon size={20} aria-hidden="true" />
-                  </span>
+                  <motion.span
+                        variants={scalePop}
+                        className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-gradient-to-br from-brand-600 to-brand-400 text-white shadow-glow transition-transform duration-300 group-hover:scale-110 group-hover:-rotate-6"
+                      >
+                        <Icon size={20} aria-hidden="true" />
+                      </motion.span>
                   <span className="font-medium text-navy transition-colors group-hover:text-brand-700">
                     {item}
                   </span>

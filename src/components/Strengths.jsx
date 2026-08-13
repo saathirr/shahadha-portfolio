@@ -2,7 +2,7 @@ import { motion } from 'framer-motion'
 import { FiCheck } from 'react-icons/fi'
 import SectionHeading from './SectionHeading'
 import { strengths } from '../data'
-import { fadeUp, staggerContainer, viewportOnce } from './motion'
+import { fadeUp, scalePop, staggerContainer, viewportOnce } from './motion'
 
 /**
  * Personal Strengths — animated checklist where each item
@@ -33,9 +33,12 @@ export default function Strengths() {
               transition={{ type: 'spring', stiffness: 300, damping: 20 }}
               className="group flex items-start gap-4 rounded-2xl border border-slate-200 bg-white p-5 shadow-card hover:border-brand-300 hover:shadow-lift"
             >
-              <span className="mt-0.5 flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-gradient-to-br from-accent to-accent-dark text-white shadow-glow-accent transition-transform duration-300 group-hover:scale-110 group-hover:-rotate-12">
+              <motion.span
+                variants={scalePop}
+                className="mt-0.5 flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-gradient-to-br from-accent to-accent-dark text-white shadow-glow-accent transition-transform duration-300 group-hover:scale-110 group-hover:-rotate-12"
+              >
                 <FiCheck size={16} strokeWidth={3} aria-hidden="true" />
-              </span>
+              </motion.span>
               <span className="font-medium text-navy transition-colors group-hover:text-brand-700">
                 {strength}
               </span>

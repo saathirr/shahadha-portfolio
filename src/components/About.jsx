@@ -2,7 +2,7 @@ import { motion } from 'framer-motion'
 import { FaRulerCombined, FaMapMarkerAlt, FaGraduationCap } from 'react-icons/fa'
 import SectionHeading from './SectionHeading'
 import { about } from '../data'
-import { fadeUp, staggerContainer, viewportOnce } from './motion'
+import { fadeUpBlur, scalePop, slideLeft, slideRight, staggerContainer, viewportOnce } from './motion'
 
 /** Map of icon names (from data.js) to React icon components. */
 const iconMap = {
@@ -31,7 +31,7 @@ export default function About() {
           className="mx-auto max-w-3xl"
         >
           <motion.p
-            variants={fadeUp}
+            variants={fadeUpBlur}
             className="text-center text-base leading-relaxed text-slate-600 sm:text-lg"
           >
             {about.summary}
@@ -51,7 +51,7 @@ export default function About() {
             return (
               <motion.div
                 key={card.label}
-                variants={fadeUp}
+                variants={i % 2 === 0 ? slideLeft : slideRight}
                 whileHover={{ y: -8, scale: 1.02 }}
                 transition={{ type: 'spring', stiffness: 300, damping: 20 }}
                 className="group relative overflow-hidden rounded-2xl border border-slate-200 bg-white p-6 shadow-card hover:border-brand-300"
@@ -60,9 +60,12 @@ export default function About() {
                   aria-hidden="true"
                   className="absolute -right-6 -top-6 h-20 w-20 rounded-full bg-brand-50 transition-transform duration-500 group-hover:scale-[1.6]"
                 />
-                <span className="relative flex h-12 w-12 items-center justify-center rounded-xl bg-gradient-to-br from-brand-600 to-brand-400 text-white shadow-glow">
+                <motion.span
+                  variants={scalePop}
+                  className="relative flex h-12 w-12 items-center justify-center rounded-xl bg-gradient-to-br from-brand-600 to-brand-400 text-white shadow-glow"
+                >
                   <Icon size={22} aria-hidden="true" />
-                </span>
+                </motion.span>
                 <div className="relative mt-4">
                   <p className="text-xs font-semibold uppercase tracking-wide text-slate-400">
                     {card.label}

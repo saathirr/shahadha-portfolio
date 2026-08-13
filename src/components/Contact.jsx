@@ -1,20 +1,19 @@
 import { motion } from 'framer-motion'
 import { FiMail, FiPhone, FiSend, FiUser } from 'react-icons/fi'
-import { FaLinkedinIn, FaBehance } from 'react-icons/fa'
+import { FaLinkedinIn } from 'react-icons/fa'
 import BlueprintBackground from './BlueprintBackground'
 import { contact } from '../data'
-import { fadeUp, staggerContainer, viewportOnce } from './motion'
+import { fadeUp, scalePop, staggerContainer, viewportOnce } from './motion'
 
 /** Icon name → component mapping for the contact cards. */
 const iconMap = {
   mail: FiMail,
   phone: FiPhone,
   linkedin: FaLinkedinIn,
-  behance: FaBehance,
 }
 
 /**
- * Contact — animated contact cards (email, phone, LinkedIn, Behance)
+ * Contact — animated contact cards (email, phone, LinkedIn)
  * plus a simple, non-functional placeholder contact form.
  */
 export default function Contact() {
@@ -67,9 +66,12 @@ export default function Contact() {
                     rel={item.href.startsWith('http') ? 'noopener noreferrer' : undefined}
                     className="group flex h-full flex-col gap-3 rounded-2xl border border-white/10 bg-white/5 p-5 backdrop-blur transition-colors duration-300 hover:border-brand-400/50 hover:bg-white/10"
                   >
-                    <span className="flex h-11 w-11 items-center justify-center rounded-xl bg-brand-600 text-white shadow-card transition-transform duration-300 group-hover:-translate-y-1 group-hover:scale-110">
+                    <motion.span
+                      variants={scalePop}
+                      className="flex h-11 w-11 items-center justify-center rounded-xl bg-brand-600 text-white shadow-card transition-transform duration-300 group-hover:-translate-y-1 group-hover:scale-110"
+                    >
                       <Icon size={20} aria-hidden="true" />
-                    </span>
+                    </motion.span>
                     <span className="text-xs font-semibold uppercase tracking-widest text-slate-400">
                       {item.label}
                     </span>
