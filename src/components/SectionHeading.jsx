@@ -7,7 +7,8 @@ import MeasureLine from './MeasureLine'
  * Animates as a staggered block when scrolled into view, with a
  * self-drawing QS measurement line beneath the title.
  */
-export default function SectionHeading({ eyebrow, title, description, center = true }) {
+export default function SectionHeading({ eyebrow, title, description, center = true, tone = 'light' }) {
+  const dark = tone === 'dark'
   return (
     <motion.div
       variants={staggerContainer(0.12)}
@@ -17,28 +18,28 @@ export default function SectionHeading({ eyebrow, title, description, center = t
       className={`mb-12 sm:mb-16 ${center ? 'text-center' : ''}`}
     >
       {eyebrow && (
-        <motion.span variants={fadeUp} className="eyebrow">
+        <motion.span variants={fadeUp} className={`eyebrow ${dark ? '!bg-white/10 !text-brand-200 !ring-white/20' : ''}`}>
           {eyebrow}
         </motion.span>
       )}
       <motion.h2
         variants={fadeUp}
-        className="mt-4 text-3xl font-extrabold tracking-tight sm:text-4xl lg:text-[2.75rem]"
+        className={`mt-4 text-3xl font-extrabold tracking-tight sm:text-4xl lg:text-[2.75rem] ${dark ? 'text-white' : ''}`}
       >
         {title}
       </motion.h2>
       {description && (
         <motion.p
           variants={fadeUp}
-          className={`mt-4 max-w-2xl text-base leading-relaxed text-slate-500 sm:text-lg ${
+          className={`mt-4 max-w-2xl text-base leading-relaxed sm:text-lg ${
             center ? 'mx-auto' : ''
-          }`}
+          } ${dark ? 'text-slate-300' : 'text-slate-500'}`}
         >
           {description}
         </motion.p>
       )}
       <motion.div variants={fadeUp} className={`${center ? 'mx-auto' : ''} mt-6`}>
-        <MeasureLine className="w-full max-w-[320px]" />
+        <MeasureLine tone={dark ? 'dark' : 'brand'} className="w-full max-w-[320px]" />
       </motion.div>
     </motion.div>
   )

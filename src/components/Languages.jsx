@@ -1,8 +1,15 @@
 import { motion } from 'framer-motion'
 import SectionHeading from './SectionHeading'
 import CountUp from './CountUp'
+import FloatingMath from './FloatingMath'
 import { languages } from '../data'
 import { fadeUp, scalePop, staggerContainer, viewportOnce } from './motion'
+
+const barGradients = [
+  'from-brand-700 via-brand-500 to-brand-400',
+  'from-accent via-accent-light to-brand-400',
+  'from-emerald-600 via-emerald-400 to-brand-400',
+]
 
 /**
  * Languages — animated proficiency bars that fill from 0 to the
@@ -10,8 +17,9 @@ import { fadeUp, scalePop, staggerContainer, viewportOnce } from './motion'
  */
 export default function Languages() {
   return (
-    <section id="languages" className="section-pad relative bg-white">
-      <div className="container-page">
+    <section id="languages" className="section-pad relative overflow-hidden bg-gradient-to-br from-white via-brand-50/40 to-white">
+      <FloatingMath count={4} tone="light" />
+      <div className="container-page relative">
         <SectionHeading
           eyebrow="Languages"
           title="Languages"
@@ -25,7 +33,7 @@ export default function Languages() {
           viewport={viewportOnce}
           className="mx-auto max-w-2xl space-y-8"
         >
-          {languages.map((lang) => (
+          {languages.map((lang, i) => (
             <motion.div key={lang.name} variants={fadeUp}>
               <div className="mb-2 flex items-baseline justify-between">
                 <h3 className="font-semibold text-navy">{lang.name}</h3>
@@ -54,7 +62,7 @@ export default function Languages() {
                   whileInView={{ width: `${lang.percent}%` }}
                   viewport={viewportOnce}
                   transition={{ duration: 0.9, ease: 'easeOut' }}
-                  className="relative h-full rounded-full bg-gradient-to-r from-brand-700 via-brand-500 to-brand-400 shadow-glow"
+                  className={`relative h-full rounded-full bg-gradient-to-r ${barGradients[i % barGradients.length]} shadow-glow`}
                 >
                   <span className="absolute inset-y-0 right-0 w-2 rounded-full bg-white/60" />
                 </motion.div>

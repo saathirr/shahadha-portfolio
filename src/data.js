@@ -82,6 +82,20 @@ export const skills = [
   'AutoCAD',
 ]
 
+/** Skills as measureable bars — drives the animated Skills section. */
+export const skillBars = [
+  { name: 'Quantity Take-Off & Measurement', percent: 92 },
+  { name: 'Preparation of BOQs', percent: 88 },
+  { name: 'Construction Cost Estimation', percent: 86 },
+  { name: 'Cost Planning & Budgeting', percent: 82 },
+  { name: 'Reading & Understanding Drawings', percent: 90 },
+  { name: 'Tender & Procurement Documentation', percent: 84 },
+  { name: 'Contract Administration', percent: 78 },
+  { name: 'Microsoft Excel', percent: 90 },
+  { name: 'AutoCAD', percent: 74 },
+  { name: 'Building Construction Knowledge', percent: 85 },
+]
+
 export const academicKnowledge = [
   'Measurement of construction works',
   'Preparation and interpretation of BOQs',

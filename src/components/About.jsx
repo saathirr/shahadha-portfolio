@@ -2,6 +2,7 @@ import { motion } from 'framer-motion'
 import { FaRulerCombined, FaMapMarkerAlt, FaGraduationCap } from 'react-icons/fa'
 import SectionHeading from './SectionHeading'
 import CountUp from './CountUp'
+import FloatingMath from './FloatingMath'
 import { about, education, languages, skills } from '../data'
 import { fadeUpBlur, scalePop, slideLeft, slideRight, staggerContainer, viewportOnce } from './motion'
 
@@ -18,9 +19,10 @@ const iconMap = {
  */
 export default function About() {
   return (
-    <section id="about" className="section-pad relative overflow-hidden bg-gradient-to-b from-white via-slate-50 to-slate-50">
+    <section id="about" className="section-pad relative overflow-hidden bg-gradient-to-b from-white via-brand-50/40 to-slate-50">
       {/* Subtle blueprint texture accent */}
       <div aria-hidden="true" className="pointer-events-none absolute inset-0 bg-blueprint-fade opacity-40" />
+      <FloatingMath count={5} tone="light" />
       <div className="container-page relative">
         <SectionHeading eyebrow="About" title={about.heading} />
 

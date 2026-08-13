@@ -3,6 +3,7 @@ import { FiMail, FiPhone, FiSend, FiUser } from 'react-icons/fi'
 import { FaLinkedinIn } from 'react-icons/fa'
 import BlueprintBackground from './BlueprintBackground'
 import MeasureLine from './MeasureLine'
+import FloatingMath from './FloatingMath'
 import { contact } from '../data'
 import { fadeUp, scalePop, staggerContainer, viewportOnce } from './motion'
 
@@ -13,6 +14,12 @@ const iconMap = {
   linkedin: FaLinkedinIn,
 }
 
+const iconGradients = [
+  'from-brand-600 to-brand-400',
+  'from-accent to-accent-dark',
+  'from-emerald-500 to-emerald-400',
+]
+
 /**
  * Contact — animated contact cards (email, phone, LinkedIn)
  * plus a simple, non-functional placeholder contact form.
@@ -21,6 +28,7 @@ export default function Contact() {
   return (
     <section id="contact" className="section-pad relative overflow-hidden bg-navy text-white">
       <BlueprintBackground className="opacity-40" />
+      <FloatingMath count={6} tone="dark" />
       <div aria-hidden="true" className="absolute inset-0">
         <div className="absolute -left-20 top-0 h-80 w-80 rounded-full bg-brand-600/25 blur-3xl" />
         <div className="absolute -right-20 bottom-0 h-80 w-80 rounded-full bg-accent/15 blur-3xl" />
@@ -57,7 +65,7 @@ export default function Contact() {
             viewport={viewportOnce}
             className="grid content-start gap-4 sm:grid-cols-2"
           >
-            {contact.items.map((item) => {
+            {contact.items.map((item, i) => {
               const Icon = iconMap[item.icon]
               return (
                 <motion.li key={item.label} variants={fadeUp}>
@@ -69,7 +77,7 @@ export default function Contact() {
                   >
                     <motion.span
                       variants={scalePop}
-                      className="flex h-11 w-11 items-center justify-center rounded-xl bg-brand-600 text-white shadow-card transition-transform duration-300 group-hover:-translate-y-1 group-hover:scale-110"
+                      className={`flex h-11 w-11 items-center justify-center rounded-xl bg-gradient-to-br ${iconGradients[i % iconGradients.length]} text-white shadow-card transition-transform duration-300 group-hover:-translate-y-1 group-hover:scale-110`}
                     >
                       <Icon size={20} aria-hidden="true" />
                     </motion.span>
