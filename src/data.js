@@ -20,7 +20,11 @@ export const hero = {
   tagline:
     'Building precise cost solutions for tomorrow\u2019s construction — detail-driven, eager to learn, and ready to contribute.',
   primaryCta: {
-    label: 'Get In Touch',
+    label: 'View Portfolio',
+    href: 'https://www.behance.net/mohammedsaathir',
+  },
+  secondaryCta: {
+    label: 'Contact Me',
     href: '#contact',
   },
 }
@@ -61,7 +65,7 @@ export const education = [
     id: 2,
     title: 'G.C.E. Ordinary Level Examination — All Passes',
     status: 'Completed',
-    institution: 'KM/Al-Ashraq MMV (National School)',
+    institution: 'AK/Munawwara Junior College',
     period: '2022',
     current: false,
   },
@@ -80,20 +84,6 @@ export const skills = [
   'Building Construction Knowledge',
   'Microsoft Word / Excel / PowerPoint',
   'AutoCAD',
-]
-
-/** Skills as measureable bars — drives the animated Skills section. */
-export const skillBars = [
-  { name: 'Quantity Take-Off & Measurement', percent: 92 },
-  { name: 'Preparation of BOQs', percent: 88 },
-  { name: 'Construction Cost Estimation', percent: 86 },
-  { name: 'Cost Planning & Budgeting', percent: 82 },
-  { name: 'Reading & Understanding Drawings', percent: 90 },
-  { name: 'Tender & Procurement Documentation', percent: 84 },
-  { name: 'Contract Administration', percent: 78 },
-  { name: 'Microsoft Excel', percent: 90 },
-  { name: 'AutoCAD', percent: 74 },
-  { name: 'Building Construction Knowledge', percent: 85 },
 ]
 
 export const academicKnowledge = [
@@ -123,7 +113,35 @@ export const languages = [
   { name: 'English', level: 'Fluent', percent: 95 },
   { name: 'Tamil', level: 'Fluent', percent: 95 },
   { name: 'Sinhala', level: 'Intermediate', percent: 65 },
+  { name: 'Arabic', level: 'Intermediate', percent: 75 },
 ]
+
+export const portfolio = {
+  heading: 'Portfolio',
+  tagline:
+    'Selected works from my journey so far — see real projects on my Behance profile.',
+  behanceUrl: 'https://www.behance.net/mohammedsaathir',
+  cards: [
+    {
+      id: 1,
+      title: 'Quantity Take-Off Case Study',
+      subtitle: 'Measurement & Estimating',
+      status: 'Coming soon',
+    },
+    {
+      id: 2,
+      title: 'BOQ Preparation Sample',
+      subtitle: 'Bills of Quantities',
+      status: 'Coming soon',
+    },
+    {
+      id: 3,
+      title: 'Construction Cost Estimation',
+      subtitle: 'Cost Planning',
+      status: 'Coming soon',
+    },
+  ],
+}
 
 export const contact = {
   heading: 'Get In Touch',
@@ -148,6 +166,12 @@ export const contact = {
       value: 'mohammed-saathir-linkedin',
       href: 'https://www.linkedin.com/in/mohammed-saathir-linkedin',
     },
+    {
+      icon: 'behance',
+      label: 'Behance',
+      value: 'behance.net/mohammedsaathir',
+      href: 'https://www.behance.net/mohammedsaathir',
+    },
   ],
 }
 
@@ -158,5 +182,6 @@ export const navLinks = [
   { id: 'skills', label: 'Skills' },
   { id: 'knowledge', label: 'Knowledge' },
   { id: 'strengths', label: 'Strengths' },
+  { id: 'portfolio', label: 'Portfolio' },
   { id: 'contact', label: 'Contact' },
 ]
