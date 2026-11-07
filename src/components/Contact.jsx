@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion'
-import { FiMail, FiPhone, FiSend, FiUser } from 'react-icons/fi'
-import { FaLinkedinIn } from 'react-icons/fa'
+import { FiMail, FiPhone, FiSend, FiUser, FiGlobe } from 'react-icons/fi'
+import { FaLinkedinIn, FaBehance } from 'react-icons/fa'
 import BlueprintBackground from './BlueprintBackground'
 import MeasureLine from './MeasureLine'
 import FloatingMath from './FloatingMath'
@@ -12,6 +12,7 @@ const iconMap = {
   mail: FiMail,
   phone: FiPhone,
   linkedin: FaLinkedinIn,
+  behance: FaBehance,
 }
 
 const iconGradients = [
@@ -66,7 +67,7 @@ export default function Contact() {
             className="grid content-start gap-4 sm:grid-cols-2"
           >
             {contact.items.map((item, i) => {
-              const Icon = iconMap[item.icon]
+              const Icon = iconMap[item.icon] || FiGlobe
               return (
                 <motion.li key={item.label} variants={fadeUp}>
                   <a

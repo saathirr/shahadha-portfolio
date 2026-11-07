@@ -11,8 +11,8 @@ export const personalInfo = {
   email: 'thowfeekshahadha@gmail.com',
   phone: '+94 71 480 6643',
   phoneHref: '+94714806643',
-  linkedin: 'https://www.linkedin.com/in/mohammed-saathir-linkedin',
-  linkedinLabel: 'mohammed-saathir-linkedin',
+  linkedin: 'https://www.linkedin.com/in/shahadha-thowfeek-a53397429',
+  linkedinLabel: 'Shahadha - linkedIn',
   profilePhoto: '/Profile.jpg',
 }
 
@@ -20,8 +20,8 @@ export const hero = {
   tagline:
     'Building precise cost solutions for tomorrow\u2019s construction — detail-driven, eager to learn, and ready to contribute.',
   primaryCta: {
-    label: 'View Portfolio',
-    href: 'https://www.behance.net/mohammedsaathir',
+    label: 'Get In Touch',
+    href: '#contact',
   },
   secondaryCta: {
     label: 'Contact Me',
@@ -65,7 +65,7 @@ export const education = [
     id: 2,
     title: 'G.C.E. Ordinary Level Examination — All Passes',
     status: 'Completed',
-    institution: 'AK/Munawwara Junior College',
+    institution: 'KM/AK/Munawwara Junior College',
     period: '2022',
     current: false,
   },
@@ -84,6 +84,20 @@ export const skills = [
   'Building Construction Knowledge',
   'Microsoft Word / Excel / PowerPoint',
   'AutoCAD',
+]
+
+/** Skills as measureable bars — drives the animated Skills section. */
+export const skillBars = [
+  { name: 'Quantity Take-Off & Measurement', percent: 92 },
+  { name: 'Preparation of BOQs', percent: 88 },
+  { name: 'Construction Cost Estimation', percent: 86 },
+  { name: 'Cost Planning & Budgeting', percent: 82 },
+  { name: 'Reading & Understanding Drawings', percent: 90 },
+  { name: 'Tender & Procurement Documentation', percent: 84 },
+  { name: 'Contract Administration', percent: 78 },
+  { name: 'Microsoft Excel', percent: 90 },
+  { name: 'AutoCAD', percent: 74 },
+  { name: 'Building Construction Knowledge', percent: 85 },
 ]
 
 export const academicKnowledge = [
@@ -116,33 +130,6 @@ export const languages = [
   { name: 'Arabic', level: 'Intermediate', percent: 75 },
 ]
 
-export const portfolio = {
-  heading: 'Portfolio',
-  tagline:
-    'Selected works from my journey so far — see real projects on my Behance profile.',
-  behanceUrl: 'https://www.behance.net/mohammedsaathir',
-  cards: [
-    {
-      id: 1,
-      title: 'Quantity Take-Off Case Study',
-      subtitle: 'Measurement & Estimating',
-      status: 'Coming soon',
-    },
-    {
-      id: 2,
-      title: 'BOQ Preparation Sample',
-      subtitle: 'Bills of Quantities',
-      status: 'Coming soon',
-    },
-    {
-      id: 3,
-      title: 'Construction Cost Estimation',
-      subtitle: 'Cost Planning',
-      status: 'Coming soon',
-    },
-  ],
-}
-
 export const contact = {
   heading: 'Get In Touch',
   tagline:
@@ -163,14 +150,8 @@ export const contact = {
     {
       icon: 'linkedin',
       label: 'LinkedIn',
-      value: 'mohammed-saathir-linkedin',
-      href: 'https://www.linkedin.com/in/mohammed-saathir-linkedin',
-    },
-    {
-      icon: 'behance',
-      label: 'Behance',
-      value: 'behance.net/mohammedsaathir',
-      href: 'https://www.behance.net/mohammedsaathir',
+      value: 'Shahadha - linkedIn',
+      href: 'https://www.linkedin.com/in/shahadha-thowfeek-a53397429',
     },
   ],
 }
@@ -182,6 +163,6 @@ export const navLinks = [
   { id: 'skills', label: 'Skills' },
   { id: 'knowledge', label: 'Knowledge' },
   { id: 'strengths', label: 'Strengths' },
-  { id: 'portfolio', label: 'Portfolio' },
+  { id: 'languages', label: 'Languages' },
   { id: 'contact', label: 'Contact' },
 ]
